@@ -1,4 +1,4 @@
-package kiosk;
+package kiosk.Lv5;
 
 public class MenuItem {
     String name;
