@@ -9,16 +9,12 @@ public class Kiosk {
     private List<Menu> menus = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
-    public Kiosk() {
-
-    }
-
     public void addKioskMenu(Menu menu){
         menus.add(menu);
     }
 
     public void start() {
-        int menuChoose;
+        int menuChoose = 0;
 
         while (1 == 1) {
             System.out.println("[ SHAKESHACK MENU ]");
@@ -28,24 +24,55 @@ public class Kiosk {
                 System.out.println(i+1 + ". " + menus.get(i).getCategoryName());
             }
             System.out.println("0. 종료");
-            menuChoose = scanner.nextInt();
+
+            try{
+                menuChoose = scanner.nextInt();
+                if(menuChoose > menus.size() || menuChoose < 0)
+                {
+                    throw new RuntimeException("범위를 벗어난 입력입니다.");
+                }
+            }
+            catch (Exception e){
+                System.out.println("잘못된 입력 : " + e);
+                scanner.nextLine();
+                continue;
+            }
+
             if (menuChoose == 0) {
                 break;
-            } else {
+            }
+
+            else {
                 menuChoose = menuChoose - 1;
                 List<MenuItem> itemList = menus.get(menuChoose).getMenuItems();
+
                 for(int i=0; i<itemList.size(); i++ )
                 {
                      System.out.println(i+1 + ". " + itemList.get(i).name + " | ₩ " + itemList.get(i).price + " | " + itemList.get(i).content + " | ");
-                 }
+                }
+
                 System.out.println("0. 뒤로가기");
-                menuChoose = scanner.nextInt();
+
+                try {
+                    menuChoose = scanner.nextInt();
+                    if(menuChoose > itemList.size() || menuChoose < 0)
+                    {
+                        throw new RuntimeException("범위를 벗어난 입력입니다.");
+                    }
+                }
+                catch (Exception e){
+                    System.out.println("잘못된 입력 : " + e);
+                    scanner.nextLine();
+                    continue;
+                }
+
                 if (menuChoose == 0) {
                     continue;
                 }
+
                 else{
                     menuChoose = menuChoose - 1;
-                    System.out.println("선택한 메뉴 : " + itemList.get(menuChoose).name + " | ₩" + itemList.get(menuChoose).price + " | " + itemList.get(menuChoose).content);
+                    System.out.println("선택한 메뉴 : " + itemList.get(menuChoose).name + " | ₩ " + itemList.get(menuChoose).price + " | " + itemList.get(menuChoose).content);
                 }
             }
         }
