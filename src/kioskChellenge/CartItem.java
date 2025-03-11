@@ -1,7 +1,5 @@
 package kioskChellenge;
 
-import java.util.List;
-
 public class CartItem {
 
     private MenuItem menuItem;
@@ -12,9 +10,8 @@ public class CartItem {
         this.itemCount = 1;
     }
 
-    @Override
-    public String toString() {
-        return menuItem.name + " | ₩ " + menuItem.price + " | " + menuItem.content + " | 수량: " + itemCount;
+    public String getCartItemFullName(){
+        return this.menuItem.name + " | ₩ " + this.menuItem.price + " | " + this.menuItem.content + " | " + this.itemCount + " 개";
     }
 
 }

@@ -11,4 +11,8 @@ public class MenuItem {
         this.price = price;
     }
 
+    public String getMenuFullName(){
+        return this.name + " | ₩ " + this.price + " | " + this.content;
+    }
+
 }
