@@ -1,4 +1,4 @@
-package kioskChellenge;
+package kioskChellenge.Lv1_back.Lv1;
 
 public class MenuItem {
     String name;
@@ -11,7 +11,7 @@ public class MenuItem {
         this.price = price;
     }
 
-    public String getMenuFullName(){        //Item 출력용
+    public String getMenuFullName(){
         return this.name + " | ₩ " + this.price + " | " + this.content;
     }
 

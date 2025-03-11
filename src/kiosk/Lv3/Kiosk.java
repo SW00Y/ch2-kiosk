@@ -8,7 +8,7 @@ public class Kiosk {
 
     private List<MenuItem> menuItems = new ArrayList<>();
 
-    public Kiosk() {
+    public Kiosk() {    //Kiosk 메소드에서 menuItems 생성
         menuItems = new ArrayList<>();
         menuItems.add(new MenuItem("ShackBurger", "토마토, 양상추, 쉑소스가 토핑된 치즈버거", 6.9));
         menuItems.add(new MenuItem("SmokeShack", "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거", 8.9));
@@ -35,9 +35,9 @@ public class Kiosk {
     }
 
     public static void main(String[] args) {
-        Kiosk kiosk = new Kiosk();
+        Kiosk kiosk = new Kiosk();  //Kiosk 메서드로 MenuItems 생성 -> 필드에 menuItems add
 
-        kiosk.start();
+        kiosk.start();  
     }
 
 }

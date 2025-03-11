@@ -1,4 +1,4 @@
-package kioskChellenge;
+package kioskChellenge.Lv1_back.Lv1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ public class Menu {
     private List<MenuItem> menuItems;
     private String categoryName;
 
-    public Menu(String categoryName){       //생성자
+    public Menu(String categoryName){
         this.menuItems = new ArrayList<>();
         this.categoryName = categoryName;
     }

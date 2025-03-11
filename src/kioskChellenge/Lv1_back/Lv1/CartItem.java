@@ -1,21 +1,17 @@
-package kioskChellenge;
+package kioskChellenge.Lv1_back.Lv1;
 
 public class CartItem {
 
-    private MenuItem menuItem;      
+    private MenuItem menuItem;
     private int itemCount;
 
-    public CartItem(MenuItem menuItem){     //생성자
+    public CartItem(MenuItem menuItem){
         this.menuItem = menuItem;
         this.itemCount = 1;
     }
 
-    public String getCartItemFullName(){            //장바구니 출력
+    public String getCartItemFullName(){
         return this.menuItem.name + " | ₩ " + this.menuItem.price + " | " + this.menuItem.content + " | " + this.itemCount + " 개";
-    }
-
-    public MenuItem getMenuItem(){
-        return this.menuItem;
     }
 
 }

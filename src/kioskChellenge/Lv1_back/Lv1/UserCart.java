@@ -1,4 +1,4 @@
-package kioskChellenge;
+package kioskChellenge.Lv1_back.Lv1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,12 @@ public class UserCart {
         System.out.println(menuItem.name + "이 장바구니에 추가되었습니다.");
     }
 
-    public List<CartItem> getCartItems(){
-        return cartItems;
+    public void showCart(){
+        System.out.println("현재 장바구니==========");
+        for(int i=0; i<cartItems.size(); i++){
+            System.out.println(cartItems.get(i).getCartItemFullName());
+        }
+        System.out.println("=====================");
     }
 
     public void removeCart(){
