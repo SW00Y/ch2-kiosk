@@ -6,6 +6,10 @@ import java.util.Scanner;
 
 public class Kiosk {
 
+    /*******************************
+     * 주석작업 Lv1 부터
+     */
+
     private List<Menu> menus = new ArrayList<>();
     UserCart userCart = new UserCart();
     boolean result = false;
