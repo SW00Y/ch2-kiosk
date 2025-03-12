@@ -1,4 +1,4 @@
-package kioskChellenge.Lv1;
+package kioskChellenge.Lv2;
 
 public class CartItem {
 

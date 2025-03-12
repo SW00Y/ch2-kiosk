@@ -1,4 +1,4 @@
-package kioskChellenge;
+package kioskChellenge.Lv2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,15 +30,11 @@ public class Kiosk {
 
     public void showSubMenu(int menuChoose){
         List<MenuItem> itemList = menus.get(menuChoose).getMenuItems();
-
-
         for (int i=0; i<itemList.size(); i++)
         {
             System.out.println(i + 1 + ". " + itemList.get(i).getMenuFullName());
         }
         System.out.println("0. 뒤로가기");
-
-
         menuChoose = userInput(itemList.size());
 
         if(menuChoose == -1)
@@ -74,6 +70,7 @@ public class Kiosk {
         }
     }
 
+
     public void addCart(MenuItem menuItem){
 
         System.out.println("선택한 메뉴 : " + menuItem.getMenuFullName());
@@ -106,11 +103,6 @@ public class Kiosk {
 
         if(userOption == 1)
         {
-            System.out.println("할인 정보를 입력해주세요.");
-            System.out.println("1. 국가유공자 : 10%\n2. 군인 : 5%\n3. 학생 : 3%\n4. 일반 : 0%");
-            userOption = userInput(4);
-
-            totalPrice = OrderDiscount.doDiscount(userOption, totalPrice);
             System.out.println("주문이 완료되었습니다. 금액은 : ￦" + totalPrice + " 입니다.");
             return true;
         }

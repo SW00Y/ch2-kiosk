@@ -1,4 +1,4 @@
-package kioskChellenge;
+package kioskChellenge.Lv2;
 
 public class MenuItem {
     String name;
