@@ -30,7 +30,12 @@ public enum OrderDiscount {
                 break;
 
         }
-        return totalPrice - (totalPrice * discountType.getDiscountPercent());
+
+        double discountPrice = Math.floor(totalPrice * discountType.getDiscountPercent() * 100) / 100;
+        totalPrice = Math.floor((totalPrice - discountPrice) * 100) / 100;
+
+        System.out.println("할인금액 ￦ " + discountPrice);
+        return totalPrice;
     }
 
 };

@@ -2,6 +2,7 @@ package kioskChellenge.Lv2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Menu {
     private List<MenuItem> menuItems;
@@ -18,6 +19,17 @@ public class Menu {
 
     public List<MenuItem> getMenuItems(){
         return menuItems;
+    }
+
+    public void printMenuItems(){
+        AtomicInteger index = new AtomicInteger(1);
+        menuItems.stream()
+                .forEach(menuItem ->
+                        {
+                            int itemIndex = index.getAndIncrement();
+                            System.out.println(itemIndex + ". " + menuItem.getMenuFullName());
+                        }
+                );
     }
 
     public String getCategoryName(){

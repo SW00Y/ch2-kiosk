@@ -2,6 +2,7 @@ package kioskChellenge.Lv2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserCart {
 
@@ -23,6 +24,13 @@ public class UserCart {
 
     public List<CartItem> getCartItems(){
         return this.cartItems;
+    }
+
+    public void removeItem(String itemName){  //Stream 이용
+        cartItems = cartItems.stream()
+                .filter(cartItem -> !cartItem.getCartItemName().equals(itemName))
+                .collect(Collectors.toList());
+        System.out.println(itemName + " 메뉴가 삭제되었습니다.");
     }
 
     public void removeCart(){
