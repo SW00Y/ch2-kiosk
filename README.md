@@ -80,6 +80,11 @@ src
 
 ## 주요 기능 구현
 
+**시스템 동작 흐름**
+
+![kiosk.png](kiosk.png)
+
+
 <details>
 
 <summary style="font-size: 16px;">
