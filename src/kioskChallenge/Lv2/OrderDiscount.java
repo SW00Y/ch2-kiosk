@@ -1,6 +1,9 @@
-package kioskChellenge.Lv2;
+package kioskChallenge.Lv2;
 
 public enum OrderDiscount {
+    /*******************************
+     *상수 목록
+     *******************************/
     HERO(0.10),
     SOLDIER(0.05),
     STUDENT(0.03),
@@ -16,6 +19,10 @@ public enum OrderDiscount {
         return this.discountPercent;
     }
 
+    /*******************************
+     * 할인율 계산
+     * 사용자의 할인옵션, 총 금액을 전달받고 처리한다.
+     *******************************/
     public static double doDiscount(int userOption, double totalPrice){
         OrderDiscount discountType = null;
 

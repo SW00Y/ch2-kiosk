@@ -1,12 +1,20 @@
-package kioskChellenge.Lv2;
+package kioskChallenge.Lv2;
+
+import kioskChallenge.Lv2.menu.Menu;
+import kioskChallenge.Lv2.menu.MenuItem;
 
 public class Main {
     public static void main(String[] args) {
-//        드링크, 디저트는 addMenu 이런식으로 new Menu를 더 추가해서 Kiosk.addMenu(추가한메뉴)
-        //하고 kiosk.addMenu를 메뉴 종류별로 띄우고 kiosk start?
+
+        /*******************************
+         * Kiosk 객체 생성
+         *******************************/
 
         Kiosk kiosk = new Kiosk();
 
+        /*******************************
+         * Menu 추가
+         *******************************/
         Menu burgerMenu = new Menu("햄버거");
         burgerMenu.addMenuItem(new MenuItem("ShackBurger", "토마토, 양상추, 쉑소스가 토핑된 치즈버거", 6.9));
         burgerMenu.addMenuItem(new MenuItem("SmokeShack", "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거", 8.9));

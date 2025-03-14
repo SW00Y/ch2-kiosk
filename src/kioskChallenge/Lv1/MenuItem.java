@@ -1,4 +1,4 @@
-package kioskChellenge.Lv1;
+package kioskChallenge.Lv1;
 
 public class MenuItem {
     String name;

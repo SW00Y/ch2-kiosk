@@ -1,8 +1,9 @@
-package kioskChellenge.Lv2;
+package kioskChallenge.Lv2.menu;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.IntStream;
 
 public class Menu {
     private List<MenuItem> menuItems;
@@ -21,14 +22,13 @@ public class Menu {
         return menuItems;
     }
 
-    public void printMenuItems(){
-        AtomicInteger index = new AtomicInteger(1);
-        menuItems.stream()
-                .forEach(menuItem ->
-                        {
-                            int itemIndex = index.getAndIncrement();
-                            System.out.println(itemIndex + ". " + menuItem.getMenuFullName());
-                        }
+    /*******************************
+     * MenuItem을 Stearm을 활용하여 출력
+     *******************************/
+    public void printMenuItems() {
+        IntStream.range(0, menuItems.size())  // 0부터 menuItems.size() - 1까지
+                .forEach(i ->
+                        System.out.println((i + 1) + ". " + menuItems.get(i).getMenuFullName()) // 1부터 시작
                 );
     }
 
